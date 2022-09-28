@@ -1,0 +1,5 @@
+insert INTO T_CALI_USUARIO (nm_usuario, cpf_usuario, cel_usuario, ds_email, ds_senha) VALUES ('Marcos Vinicius Ferreira', '34534534599', '11989332002', 'marcosvinicius@caliope.com.br', '1213456789');
+insert INTO T_CALI_USUARIO (nm_usuario, cpf_usuario, cel_usuario, ds_email, ds_senha) VALUES ('Marcos Maciel', '35635635699', '11989332002', 'marcosmaciel@caliope.com.br', '1213456789');
+insert INTO T_CALI_USUARIO (nm_usuario, cpf_usuario, cel_usuario, ds_email, ds_senha) VALUES ('Cristine Acoccela', '34234234299', '11989332002', 'cristine@caliope.com.br', '1213456789');
+insert INTO T_CALI_USUARIO (nm_usuario, cpf_usuario, cel_usuario, ds_email, ds_senha) VALUES ('Priscila Nastacio', '32232232299', '11989332002', 'priscila@caliope.com.br', '1213456789');
+insert INTO T_CALI_USUARIO (nm_usuario, cpf_usuario, cel_usuario, ds_email, ds_senha) VALUES ('Jonathan Felix', '36736736799', '11989332002', 'jonathan@caliope.com.br', '1213456789');
