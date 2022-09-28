@@ -41,11 +41,11 @@ public class UsuarioController {
 	
 	@PutMapping("/usuario/{id}")
 	public ResponseEntity<Object> updateUsuario(@RequestBody Usuario novoUsuario, @PathVariable Long id) {
-		Optional<Usuario> findById = usuarioRepository.findById(id);
-		if(findById.isEmpty()) {
+		Optional<Usuario> checkUsuario = usuarioRepository.findById(id);
+		if(!checkUsuario.isPresent()) {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 		}
-		Usuario usuarioExistente = findById.get();
+		Usuario usuarioExistente = checkUsuario.get();
 		BeanUtils.copyProperties(novoUsuario, usuarioExistente);
 		usuarioExistente.setId(id);
 		this.insert(usuarioExistente);
