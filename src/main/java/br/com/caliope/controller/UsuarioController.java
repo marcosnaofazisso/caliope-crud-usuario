@@ -1,4 +1,4 @@
-package br.com.caliope;
+package br.com.caliope.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.caliope.model.Usuario;
+import br.com.caliope.repository.UsuarioRepository;
 import lombok.AllArgsConstructor;
 
 @RestController

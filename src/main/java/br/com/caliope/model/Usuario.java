@@ -1,10 +1,16 @@
-package br.com.caliope;
+package br.com.caliope.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -20,7 +26,26 @@ public class Usuario {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_usuario")
 	private Long id;
+
+	@Column(name = "nm_usuario")
+	private String nome;
+
+	@Column(name = "cpf_usuario")
+	private String cpf;
+
+	@Column(name = "cel_usuario")
+	private String numeroCelular;
+
+	@Column(name = "ds_email")
+	private String email;
+
+	@Column(name = "ds_senha")
+	private String senha;
 	
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	private List<Pedido> pedidos = new ArrayList<Pedido>();
+	
+
 	public Long getId() {
 		return id;
 	}
@@ -69,19 +94,14 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	@Column(name = "nm_usuario")
-	private String nome;
-	
-	@Column(name = "cpf_usuario")
-	private String cpf;
-	
-	@Column(name = "cel_usuario")
-	private String numeroCelular;
-	
-	@Column(name = "ds_email")
-	private String email;
-	
-	@Column(name = "ds_senha")
-	private String senha;
+	public List<Pedido> getPedidos() {
+		return pedidos;
+	}
 
+	public void setPedidos(List<Pedido> pedidos) {
+		this.pedidos = pedidos;
+	}
+	
+	
+	
 }
